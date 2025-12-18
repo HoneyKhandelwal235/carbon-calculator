@@ -21,7 +21,7 @@ A beautiful, modern web application to calculate your daily carbon footprint and
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://YOUR-USERNAME.github.io/carbon-calculator/)
+[View Live Demo](https://HoneyKhandelwal235.github.io/carbon-calculator/)
 
 ## 📸 Screenshots
 
@@ -159,7 +159,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@YOUR-USERNAME](https://github.com/YOUR-USERNAME)
+- GitHub: [@HoneyKhandelwal235](https://github.com/YOUR-USERNAME)
 - Website: [your-website.com](https://your-website.com)
 
 ## 🙏 Acknowledgments
@@ -171,7 +171,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you have any questions or need help:
-- Open an [Issue](https://github.com/YOUR-USERNAME/carbon-calculator/issues)
+- Open an [Issue](https://github.com/HoneyKhandelwal235/carbon-calculator/issues)
 - Email: your-email@example.com
 
 ## ⭐ Show Your Support
@@ -181,3 +181,4 @@ If this project helped you, please give it a ⭐ on GitHub!
 ---
 
 **Made with 💚 for the Planet** | Every small action counts toward a sustainable future 🌱
+
