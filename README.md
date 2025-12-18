@@ -172,7 +172,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or need help:
 - Open an [Issue](https://github.com/HoneyKhandelwal235/carbon-calculator/issues)
-- Email: your-email@example.com
+- Email: honeykhandelwal555@gmail.com
 
 ## ⭐ Show Your Support
 
@@ -181,4 +181,5 @@ If this project helped you, please give it a ⭐ on GitHub!
 ---
 
 **Made with 💚 for the Planet** | Every small action counts toward a sustainable future 🌱
+
 
