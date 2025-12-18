@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Calculate your daily carbon footprint and get personalized suggestions to reduce emissions. Track your progress and contribute to a sustainable future.">
+  <meta name="keywords"
+    content="carbon footprint, CO2 calculator, emissions, sustainability, environment, climate change">
+  <meta name="author" content="Carbon Calculator">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Carbon Footprint Calculator - Track Your Environmental Impact">
+  <meta property="og:description"
+    content="Calculate your daily carbon footprint and discover ways to reduce your environmental impact.">
+  <meta property="og:type" content="website">
+
+  <title>Carbon Footprint Calculator - Track Your Environmental Impact</title>
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Theme Toggle -->
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+    <span id="themeIcon">🌙</span>
+  </button>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">🌍</div>
+        <h1 class="title">Carbon Footprint Calculator</h1>
+        <p class="subtitle">
+          Measure your daily environmental impact and discover personalized ways to reduce your carbon footprint
+        </p>
+      </div>
+    </header>
+
+    <!-- Tabs Navigation -->
+    <nav class="tabs" role="tablist">
+      <button class="tab-button active" data-tab="calculator" role="tab" aria-selected="true">
+        📊 Calculator
+      </button>
+      <button class="tab-button" data-tab="results" role="tab" aria-selected="false">
+        📈 Results
+      </button>
+      <button class="tab-button" data-tab="history" role="tab" aria-selected="false">
+        📜 History
+      </button>
+      <button class="tab-button" data-tab="tips" role="tab" aria-selected="false">
+        💡 Tips
+      </button>
+    </nav>
+
+    <!-- Tab Contents -->
+    <main>
+
+      <!-- Calculator Tab -->
+      <section id="calculatorTab" class="tab-content active" role="tabpanel">
+        <div class="card glass-card">
+          <h2 class="mb-lg">Calculate Your Carbon Footprint</h2>
+          <p class="mb-xl" style="color: var(--color-text-secondary);">
+            Enter your daily or weekly consumption values below. All fields are optional - fill in what's relevant to
+            you.
+          </p>
+
+          <form id="calculatorForm" onsubmit="event.preventDefault(); calculate();">
+
+            <!-- Travel Input -->
+            <div class="form-group">
+              <label for="travel">
+                🚗 Daily Travel Distance (km/day)
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="travel" min="0" step="0.1" placeholder="e.g., 15"
+                  aria-describedby="travelHelp">
+                <span class="input-icon">🚗</span>
+              </div>
+              <small id="travelHelp" style="color: var(--color-text-tertiary); font-size: 0.875rem;">
+                Total distance traveled by car/bike per day
+              </small>
+            </div>
+
+            <!-- Electricity Input -->
+            <div class="form-group">
+              <label for="electricity">
+                ⚡ Electricity Usage (kWh/day)
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="electricity" min="0" step="0.1" placeholder="e.g., 4.5"
+                  aria-describedby="electricityHelp">
+                <span class="input-icon">⚡</span>
+              </div>
+              <small id="electricityHelp" style="color: var(--color-text-tertiary); font-size: 0.875rem;">
+                Daily electricity consumption in units (kWh)
+              </small>
+            </div>
+
+            <!-- AC Usage Input -->
+            <div class="form-group">
+              <label for="ac">
+                ❄️ Air Conditioning Usage (hours/day)
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="ac" min="0" step="0.1" placeholder="e.g., 3" aria-describedby="acHelp">
+                <span class="input-icon">❄️</span>
+              </div>
+              <small id="acHelp" style="color: var(--color-text-tertiary); font-size: 0.875rem;">
+                Hours of AC usage per day
+              </small>
+            </div>
+
+            <!-- Meat Consumption Input -->
+            <div class="form-group">
+              <label for="meat">
+                🥩 Meat Consumption (meals/week)
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="meat" min="0" step="1" placeholder="e.g., 5" aria-describedby="meatHelp">
+                <span class="input-icon">🥩</span>
+              </div>
+              <small id="meatHelp" style="color: var(--color-text-tertiary); font-size: 0.875rem;">
+                Number of meals with meat per week
+              </small>
+            </div>
+
+            <!-- Fuel Usage Input -->
+            <div class="form-group">
+              <label for="fuel">
+                ⛽ Fuel Usage (litres/week)
+              </label>
+              <div class="input-wrapper">
+                <input type="number" id="fuel" min="0" step="0.1" placeholder="e.g., 4" aria-describedby="fuelHelp">
+                <span class="input-icon">⛽</span>
+              </div>
+              <small id="fuelHelp" style="color: var(--color-text-tertiary); font-size: 0.875rem;">
+                Petrol/diesel consumption for 2-wheeler or car per week
+              </small>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+              <button type="submit" id="calculateBtn" class="btn" style="flex: 1;">
+                Calculate Footprint
+              </button>
+              <button type="button" id="clearBtn" class="btn btn-secondary">
+                Clear
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Info Box -->
+          <div class="mt-xl"
+            style="background: var(--color-bg-tertiary); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+            <p style="margin: 0; font-size: 0.9375rem; color: var(--color-text-secondary);">
+              <strong>💡 Tip:</strong> Results update automatically as you type. Your calculations are saved locally for
+              future reference.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Results Tab -->
+      <section id="resultsTab" class="tab-content" role="tabpanel">
+        <div id="resultsContent">
+          <div class="text-center" style="padding: 3rem;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🌍</div>
+            <h3>Ready to Calculate</h3>
+            <p style="color: var(--color-text-secondary);">
+              Enter your daily values in the calculator tab and click Calculate to see your results.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- History Tab -->
+      <section id="historyTab" class="tab-content" role="tabpanel">
+        <div id="historyContent">
+          <!-- Populated by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Tips Tab -->
+      <section id="tipsTab" class="tab-content" role="tabpanel">
+        <div id="tipsContent">
+          <!-- Populated by JavaScript -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+      style="text-align: center; margin-top: 3rem; padding: 2rem 0; color: var(--color-text-tertiary); font-size: 0.875rem;">
+      <p style="margin-bottom: 0.5rem;">
+        🌱 Every small action counts towards a sustainable future
+      </p>
+      <p style="margin: 0;">
+        Made with 💚 for the Planet | Data based on average emission factors
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js?v=2"></script>
+
+</body>
+
+</html>
